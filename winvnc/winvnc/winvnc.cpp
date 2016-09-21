@@ -247,12 +247,36 @@ BOOL CALLBACK DialogProc(HWND hWnd, UINT Message, WPARAM wParam, LPARAM lParam)
 				hList=GetDlgItem(hWnd,IDC_LIST); // get the ID of the ListView
 				SendMessage(hList,LVM_SETEXTENDEDLISTVIEWSTYLE,0,LVS_EX_FULLROWSELECT); // Set style
 
+				HDC hdc = GetDC(hWnd);
+				LOGFONT lf = {
+					(LONG)(25 * GetDeviceCaps(hdc, LOGPIXELSX) / 96.0f),
+					0,
+					0,
+					0,
+					FW_DONTCARE,
+					FALSE,
+					FALSE,
+					FALSE,
+					DEFAULT_CHARSET,
+					OUT_OUTLINE_PRECIS,
+					CLIP_DEFAULT_PRECIS,
+					PROOF_QUALITY,
+					DEFAULT_PITCH,
+					"MS UI Gothic"
+				};
+				ReleaseDC(hWnd, hdc);
+				HFONT hFont = CreateFontIndirect(&lf);
+				SendMessage(hList,WM_SETFONT,(WPARAM)hFont,0);
+
+				RECT rcList = {0};
+				GetClientRect(hList, &rcList);
+
 				// Here we put the info on the Coulom headers
 				// this is not data, only name of each header we like
                 memset(&LvCol,0,sizeof(LvCol)); // Reset Coluom
 				LvCol.mask=LVCF_TEXT|LVCF_WIDTH|LVCF_SUBITEM; // Type of mask
-				LvCol.cx=0x100;                                // width between each coloum
-				LvCol.pszText="Select Helpdesk to connect to .......";                     // First Header
+				LvCol.cx=rcList.right - rcList.left;                    // width between each coloum
+				LvCol.pszText="Select Helpdesk to connect to .......";  // First Header
 // 				LvCol.cx=0x60;
 
 				// Inserting Couloms as much as we want
