@@ -69,6 +69,16 @@ LANGUAGE LANG_NEUTRAL, SUBLANG_SYS_DEFAULT
 
 /////////////////////////////////////////////////////////////////////////////
 //
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_WINVNC              ICON                    "res\\icon1.ico"
+IDI_FLASH               ICON                    "res\\icon2.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
 // Bitmap
 //
 
@@ -398,28 +408,6 @@ END
 #endif    // APSTUDIO_INVOKED
 
 #endif    // 英語 (英国) resources
-/////////////////////////////////////////////////////////////////////////////
-
-
-/////////////////////////////////////////////////////////////////////////////
-// オランダ語 (ベルギー) resources
-
-#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_NLB)
-#ifdef _WIN32
-LANGUAGE LANG_DUTCH, SUBLANG_DUTCH_BELGIAN
-#pragma code_page(1252)
-#endif //_WIN32
-
-/////////////////////////////////////////////////////////////////////////////
-//
-// Icon
-//
-
-// Icon with lowest ID value placed first to ensure application icon
-// remains consistent on all systems.
-IDI_WINVNC              ICON                    "res\\icon1.ico"
-IDI_FLASH               ICON                    "res\\icon2.ico"
-#endif    // オランダ語 (ベルギー) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
