@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{654E70E1-C809-42BF-9886-C17FC9EC9249}</ProjectGuid>
+    <RootNamespace>winvnc</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141_xp</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141_xp</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>15.0.27625.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>.\..\Debug\</OutDir>
+    <IntDir>.\..\Debug\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\..\Release\</OutDir>
+    <IntDir>.\..\Release\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\..\Debug/winvnc.tlb</TypeLibraryName>
+      <HeaderFileName />
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\omnithread;..;..\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;__x86__;__WIN32__;WIN32;_WINDOWS;XMD_H;_WINSTATIC;SINGLECLICKULTRA;_WIN32_WINNT=0x501;_WIN32_IE=0x0500;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeaderOutputFile>.\..\Debug/winvnc.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\..\Debug/</AssemblerListingLocation>
+      <ObjectFileName>.\..\Debug/</ObjectFileName>
+      <ProgramDataBaseFileName>.\..\Debug/</ProgramDataBaseFileName>
+      <BrowseInformation>true</BrowseInformation>
+      <BrowseInformationFile>.\..\Debug/</BrowseInformationFile>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0809</Culture>
+    </ResourceCompile>
+    <PreLinkEvent>
+      <Command>cl /nologo /MTd /Fo..\Debug\ /Fd..\Debug\ /c buildtime.cpp</Command>
+    </PreLinkEvent>
+    <Link>
+      <AdditionalDependencies>ws2_32.lib;winmm.lib;version.lib;comctl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>.\..\Debug/winvnc.exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>.\..\Debug/winvnc.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\..\Debug/winvnc.bsc</OutputFile>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\..\Release/winvnc.tlb</TypeLibraryName>
+      <HeaderFileName />
+    </Midl>
+    <ClCompile>
+      <Optimization>MinSpace</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>..\omnithread;..;..\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;__x86__;__WIN32__;WIN32;_WINDOWS;_WIN32_WINNT=0x501;XMD_H;_WINSTATIC;SINGLECLICKULTRA;_WIN32_IE=0x0500;DRIVER;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeaderOutputFile>.\..\Release/winvnc.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\..\Release/</AssemblerListingLocation>
+      <ObjectFileName>.\..\Release/</ObjectFileName>
+      <ProgramDataBaseFileName>.\..\Release/</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0809</Culture>
+    </ResourceCompile>
+    <PreLinkEvent>
+      <Command>cl /nologo /MT /Fo..\Release\ /Fd..\Release\ /c buildtime.cpp</Command>
+    </PreLinkEvent>
+    <Link>
+      <AdditionalDependencies>wsock32.lib;winmm.lib;version.lib;comctl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>.\..\Release/winvnc.exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <ProgramDatabaseFile>.\..\Release/winvnc.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\..\Release/winvnc.bsc</OutputFile>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\DSMPlugin\DSMPlugin.cpp" />
+    <ClCompile Include="..\..\ZipUnZip32\ZipUnzip32.cpp" />
+    <ClCompile Include="black_layered.cpp" />
+    <ClCompile Include="buildtime.cpp" />
+    <ClCompile Include="Dtwinver.cpp" />
+    <ClCompile Include="HideDesktop.cpp" />
+    <ClCompile Include="IPC.cpp" />
+    <ClCompile Include="rfbRegion_win32.cpp" />
+    <ClCompile Include="rfbUpdateTracker.cpp" />
+    <ClCompile Include="stdhdrs.cpp" />
+    <ClCompile Include="tableinitcmtemplate.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tableinittctemplate.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tabletranstemplate.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Test.cpp" />
+    <ClCompile Include="TextChat.cpp" />
+    <ClCompile Include="translate.cpp" />
+    <ClCompile Include="videodriver.cpp" />
+    <ClCompile Include="videodrivercheck.cpp" />
+    <ClCompile Include="vncabout.cpp" />
+    <ClCompile Include="vncbuffer.cpp" />
+    <ClCompile Include="vncclient.cpp" />
+    <ClCompile Include="vncdesktop.cpp" />
+    <ClCompile Include="vncDesktopSW.cpp" />
+    <ClCompile Include="vncdesktopthread.cpp" />
+    <ClCompile Include="vncencodehext.cpp" />
+    <ClCompile Include="vncencoder.cpp" />
+    <ClCompile Include="vncencoderCursor.cpp" />
+    <ClCompile Include="vncencodezrle.cpp" />
+    <ClCompile Include="vncinsthandler.cpp" />
+    <ClCompile Include="vnckeymap.cpp" />
+    <ClCompile Include="vnclog.cpp" />
+    <ClCompile Include="vncmenu.cpp" />
+    <ClCompile Include="vncMultiMonitor.cpp" />
+    <ClCompile Include="vncOSVersion.cpp" />
+    <ClCompile Include="vncproperties.cpp" />
+    <ClCompile Include="vncpropertiesPoll.cpp" />
+    <ClCompile Include="vncserver.cpp" />
+    <ClCompile Include="vncservice.cpp" />
+    <ClCompile Include="vncsockconnect.cpp" />
+    <ClCompile Include="vsocket.cpp" />
+    <ClCompile Include="winvnc.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\DSMPlugin\DSMPlugin.h" />
+    <ClInclude Include="..\..\ZipUnZip32\ZipUnZip32.h" />
+    <ClInclude Include="Dtwinver.h" />
+    <ClInclude Include="IPC.h" />
+    <ClInclude Include="keysymdef.h" />
+    <ClInclude Include="MultiMon.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="rfb.h" />
+    <ClInclude Include="rfbMisc.h" />
+    <ClInclude Include="rfbRect.h" />
+    <ClInclude Include="rfbRegion.h" />
+    <ClInclude Include="rfbRegion_win32.h" />
+    <ClInclude Include="rfbRegion_X11.h" />
+    <ClInclude Include="rfbUpdateTracker.h" />
+    <ClInclude Include="stdhdrs.h" />
+    <ClInclude Include="TextChat.h" />
+    <ClInclude Include="translate.h" />
+    <ClInclude Include="videodriver.h" />
+    <ClInclude Include="vncabout.h" />
+    <ClInclude Include="vncacceptdialog.h" />
+    <ClInclude Include="vncbuffer.h" />
+    <ClInclude Include="vncclient.h" />
+    <ClInclude Include="vncdesktop.h" />
+    <ClInclude Include="vncdesktopthread.h" />
+    <ClInclude Include="vncencodehext.h" />
+    <ClInclude Include="vncencodemgr.h" />
+    <ClInclude Include="vncencoder.h" />
+    <ClInclude Include="vncencodezrle.h" />
+    <ClInclude Include="vncinsthandler.h" />
+    <ClInclude Include="vnckeymap.h" />
+    <ClInclude Include="vnclog.h" />
+    <ClInclude Include="vncmenu.h" />
+    <ClInclude Include="vncproperties.h" />
+    <ClInclude Include="vncpropertiesPoll.h" />
+    <ClInclude Include="vncpropPath.h" />
+    <ClInclude Include="vncserver.h" />
+    <ClInclude Include="vncservice.h" />
+    <ClInclude Include="vncsockconnect.h" />
+    <ClInclude Include="vsocket.h" />
+    <ClInclude Include="vtypes.h" />
+    <ClInclude Include="winvnc.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="winvnc.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\icon1.ico" />
+    <Image Include="res\icon2.ico" />
+    <Image Include="res\Image1.bmp" />
+    <Image Include="res\Image2.bmp" />
+    <Image Include="res\vnc-1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Manifest Include="winvnc.exe.manifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\rdr\rdr.vcxproj">
+      <Project>{8f44bf64-264a-4148-a74e-23e0d810b67b}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Xregion\Xregion.vcxproj">
+      <Project>{a947f8f5-cdd1-4c0f-8cb6-ec48a3310ac6}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\zlib\zlib.vcxproj">
+      <Project>{cf3e4927-b053-47b9-bb44-19603d71cd09}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\omnithread\omnithread.vcxproj">
+      <Project>{10e9c418-64d2-4119-b7e9-0d8631c0d1e2}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

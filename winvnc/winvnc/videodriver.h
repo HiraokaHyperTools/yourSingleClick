@@ -131,7 +131,7 @@ public:
 
 	vncVideoDriver();
 	~vncVideoDriver();
-	BOOL Activate_video_driver(bool auto,int x,int y, int w,int h);
+	BOOL Activate_video_driver(bool autoMode,int x,int y, int w,int h);
 	void DesActivate_video_driver();
 	void StartMirroring();
 	void StopMirroring();

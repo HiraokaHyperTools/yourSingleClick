@@ -187,7 +187,7 @@ vncVideoDriver::StopMirroring()
 
 
 BOOL
-vncVideoDriver::Activate_video_driver(bool auto,int x,int y, int w,int h)
+vncVideoDriver::Activate_video_driver(bool autoMode,int x,int y, int w,int h)
    {
 	#define DM_POSITION             0x00000020L
 	first=true;

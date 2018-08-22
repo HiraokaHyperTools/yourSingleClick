@@ -1,23 +1,19 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 9.00
-# Visual Studio 2005
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Xregion", "..\Xregion\Xregion.vcproj", "{A947F8F5-CDD1-4C0F-8CB6-EC48A3310AC6}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Xregion", "..\Xregion\Xregion.vcxproj", "{A947F8F5-CDD1-4C0F-8CB6-EC48A3310AC6}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "omnithread", "omnithread\omnithread.vcproj", "{10E9C418-64D2-4119-B7E9-0D8631C0D1E2}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "omnithread", "omnithread\omnithread.vcxproj", "{10E9C418-64D2-4119-B7E9-0D8631C0D1E2}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rdr", "..\rdr\rdr.vcproj", "{8F44BF64-264A-4148-A74E-23E0D810B67B}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rdr", "..\rdr\rdr.vcxproj", "{8F44BF64-264A-4148-A74E-23E0D810B67B}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "vnchooks", "vnchooks\vnchooks.vcproj", "{B595088E-3836-4F9E-93C3-13D9F5193C88}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "vnchooks", "vnchooks\vnchooks.vcxproj", "{B595088E-3836-4F9E-93C3-13D9F5193C88}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "winvnc", "winvnc\winvnc.vcproj", "{654E70E1-C809-42BF-9886-C17FC9EC9249}"
-	ProjectSection(ProjectDependencies) = postProject
-		{10E9C418-64D2-4119-B7E9-0D8631C0D1E2} = {10E9C418-64D2-4119-B7E9-0D8631C0D1E2}
-		{8F44BF64-264A-4148-A74E-23E0D810B67B} = {8F44BF64-264A-4148-A74E-23E0D810B67B}
-		{A947F8F5-CDD1-4C0F-8CB6-EC48A3310AC6} = {A947F8F5-CDD1-4C0F-8CB6-EC48A3310AC6}
-		{CF3E4927-B053-47B9-BB44-19603D71CD09} = {CF3E4927-B053-47B9-BB44-19603D71CD09}
-	EndProjectSection
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "winvnc", "winvnc\winvnc.vcxproj", "{654E70E1-C809-42BF-9886-C17FC9EC9249}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "zlib", "..\zlib\zlib.vcproj", "{CF3E4927-B053-47B9-BB44-19603D71CD09}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "zlib", "..\zlib\zlib.vcxproj", "{CF3E4927-B053-47B9-BB44-19603D71CD09}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -52,5 +48,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FD7D446A-5A7B-42F4-9074-0E77D3BEB94A}
 	EndGlobalSection
 EndGlobal
