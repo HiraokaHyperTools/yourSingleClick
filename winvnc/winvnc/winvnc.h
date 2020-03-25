@@ -46,7 +46,7 @@ extern DWORD		mainthreadId;
 #ifndef SINGLECLICKULTRA
 extern int WinVNCAppMain();
 #else
-extern int WinVNCAppMain(unsigned long ipaddress = 0, unsigned short port = 0);
+extern int WinVNCAppMain(unsigned long ipaddress = 0, unsigned short port = 0, bool willAutoReconnect = false);
 #endif
 
 // Standard command-line flag definitions

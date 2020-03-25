@@ -2352,12 +2352,14 @@ vncClientThread::run(void *arg)
 	m_server->RemoveClient(m_client->GetClientId());
 
 	// sf@2003 - AutoReconnection attempt if required
-	if (m_server->AutoReconnect())
+	if (m_server->AutoReconnect()) {
 		vncService::PostAddNewClient(1111, 1111);
-
+	}
+	else {
 #ifdef SINGLECLICKULTRA
-	vncService::KillRunningCopy();
+		vncService::KillRunningCopy();
 #endif
+	}
 }
 
 // The vncClient itself

@@ -708,6 +708,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR szCmdLine,
 	}
 
 	BOOL argfound = FALSE;
+	BOOL willAutoReconnect = false;
 	for (unsigned int i = 0; i < strlen(szCmdLine); i++)
 	{
 		if (szCmdLine[i] <= ' ')
@@ -857,6 +858,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR szCmdLine,
 			// on the command line !
 			vncService::PostAddNewClient(999, 999); // sf@2003 - I hate to do that ;)
 			i+=strlen(winvncAutoReconnect);
+			willAutoReconnect = true;
 			continue;
 		}
 		/*
@@ -912,7 +914,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR szCmdLine,
 						//vncService::PostAddNewClient(address, port);
 						if (!vncService::PostAddNewClient(address, port)) {
 							// VNC isn't running so we will start it now
-							return WinVNCAppMain(address, port);
+							return WinVNCAppMain(address, port, willAutoReconnect);
 						}
 #endif
 					}
@@ -949,7 +951,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR szCmdLine,
 int WinVNCAppMain()
 #else
 
-int WinVNCAppMain(unsigned long ipaddress, unsigned short port)
+int WinVNCAppMain(unsigned long ipaddress, unsigned short port, bool willAutoReconnect)
 #endif
 {
 #ifdef CRASH_ENABLED
@@ -1051,9 +1053,12 @@ int WinVNCAppMain(unsigned long ipaddress, unsigned short port)
 
 #ifdef SINGLECLICKULTRA
 	// If Address and Port are specified then Call AddNewClient
-	if (ipaddress > 0 && port > 0)
+	if (ipaddress > 0 && port > 0) {
+		if (willAutoReconnect) {
+			vncService::PostAddNewClient(999, 999); // sf@2003 - I hate to do that ;)
+		}
 		vncService::PostAddNewClient(ipaddress, port);
-
+	}
 #endif
 	// Now enter the message handling loop until told to quit!
 	MSG msg;
